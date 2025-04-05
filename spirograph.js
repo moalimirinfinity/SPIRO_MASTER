@@ -1,4 +1,3 @@
-
 export class Spirograph {
     constructor(canvas, initialParams) {
         if (!canvas) {
