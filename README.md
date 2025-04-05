@@ -6,9 +6,7 @@ A hypnotic Spirograph pattern generator built with pure JavaScript and HTML5 Can
 
 ## 🌐 Live Demo
 
-Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.io/Spirograph-Animation/)
-
-*(Note: This link points to the original demo. Update it if you host the refactored version elsewhere.)*
+Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.io/Spiro_Master)
 
 ---
 
