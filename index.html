@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Spirograph Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SPIRO MASTER</h1>
+        <canvas id="spirographCanvas" width="800" height="600"></canvas>
+
+        <div class="controls-container">
+            <div class="control-group">
+                <label for="R">R: <span id="RValue">200</span></label>
+                <input type="range" id="R" min="50" max="300" value="200" title="Large Circle Radius">
+            </div>
+            <div class="control-group">
+                <label for="r">r: <span id="rValue">50</span></label>
+                <input type="range" id="r" min="1" max="150" value="50" title="Small Circle Radius">
+            </div>
+            <div class="control-group">
+                <label for="p">p: <span id="pValue">70</span></label>
+                <input type="range" id="p" min="1" max="200" value="70" title="Drawing Point Distance">
+            </div>
+            <div class="control-group">
+                <label for="speed">Speed: <span id="speedValue">0.050</span></label>
+                <input type="range" id="speed" min="0.001" max="0.2" step="0.001" value="0.05" title="Animation Speed">
+            </div>
+            <div class="control-group">
+                <label for="lineWidth">Width: <span id="lineWidthValue">2</span></label>
+                <input type="range" id="lineWidth" min="0.5" max="10" step="0.5" value="2" title="Line Width">
+            </div>
+            <div class="control-group color-group">
+                <label for="color" title="Line Color">Line</label>
+                <input type="color" id="color" value="#00FFFF">
+            </div>
+            <div class="control-group color-group">
+                <label for="bgColor" title="Background Color">BG</label>
+                <input type="color" id="bgColor" value="#1a1a1a">
+            </div>
+
+            <div class="control-group checkbox-group">
+                <input type="checkbox" id="showCircles" name="showCircles">
+                <label for="showCircles" title="Show Construction Circles">Guides</label>
+            </div>
+            <div class="control-group checkbox-group">
+                <input type="checkbox" id="fadingTrail" name="fadingTrail" checked>
+                <label for="fadingTrail" title="Enable Fading Trail Effect">Trail</label>
+            </div>
+             <div class="control-group select-group">
+                 <label for="presets">Preset:</label>
+                 <select id="presets">
+                     <option value="">Select...</option>
+                     <option value="flower">Flower</option>
+                     <option value="star">Star</option>
+                     <option value="web">Web</option>
+                     <option value="loops">Loops</option>
+                 </select>
+             </div>
+            <button id="resetButton" title="Reset Drawing">Reset</button>
+            <button id="exportButton" title="Export as PNG">Export</button>
+        </div>
+         <p class="hint">Created by Moalimirinfinity</p>
+    </div>
+
+    <script src="Spirograph.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

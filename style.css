@@ -1,0 +1,244 @@
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --primary-color: #00bcd4; /* Cyan */
+    --secondary-color: #ff4081; /* Pink */
+    --border-color: #333;
+    --controls-bg: #2a2a2a;
+    --input-bg: #444;
+    --button-bg: var(--primary-color);
+    --button-hover-bg: var(--secondary-color);
+    --button-text-color: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--controls-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 95%;
+    width: 900px; /* Limit container width */
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 15px; /* Reduced margin */
+    font-weight: 300;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+canvas {
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color); /* Initial canvas background */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%; /* Ensure canvas is responsive */
+    height: auto;   /* Maintain aspect ratio */
+    transition: background-color 0.3s ease;
+}
+
+/* --- Updated Controls Container --- */
+.controls-container {
+    display: grid;
+    /* Adjust column definition for compactness. Try fewer columns or different minmax */
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly wider min */
+    gap: 10px 15px; /* Row gap, Column gap */
+    width: 100%;
+    margin: 15px 0; /* Reduced margin */
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center; /* Vertically align items in grid cells */
+}
+
+/* --- Updated Control Group --- */
+.control-group {
+    display: flex;
+    /* Arrange label and input side-by-side */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Pushes label and input apart */
+    gap: 8px; /* Space between label and input */
+    min-width: 0; /* Prevent flex items from overflowing */
+}
+
+.control-group label {
+    font-size: 0.85em; /* Slightly smaller label */
+    color: #ccc;
+    white-space: nowrap; /* Prevent label text wrapping */
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.control-group span {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 30px; /* Ensure space for values */
+    display: inline-block;
+    text-align: right;
+    font-size: 0.8em; /* Smaller value display */
+    transition: color 0.3s ease;
+    margin-left: 4px; /* Space before value */
+}
+
+input[type="range"] {
+    flex-grow: 1; /* Allow slider to take available space */
+    width: auto; /* Override previous width: 100% */
+    min-width: 60px; /* Minimum width for the slider */
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    transition: accent-color 0.3s ease;
+    height: 18px; /* Make slider track thinner */
+}
+
+/* Specific styling for color pickers in compact layout */
+.control-group.color-group {
+     justify-content: flex-start; /* Align color pickers left */
+}
+.control-group.color-group label {
+    margin-right: 5px;
+}
+input[type="color"] {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 35px; /* Smaller color picker */
+    height: 25px;
+    padding: 0;
+    background-color: var(--input-bg);
+}
+
+/* Styling for checkboxes */
+.control-group.checkbox-group {
+    justify-content: flex-start; /* Align checkbox left */
+}
+.control-group.checkbox-group label {
+    order: 2; /* Put label after checkbox */
+     font-size: 0.85em;
+}
+input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    width: 15px;
+    height: 15px;
+    order: 1; /* Put checkbox first */
+     margin-right: 5px;
+}
+
+/* Styling for select dropdown */
+.control-group.select-group {
+    /* You might want this to span more width if needed, or keep it compact */
+     justify-content: flex-start;
+}
+.control-group.select-group label {
+     margin-right: 5px;
+}
+select {
+    padding: 5px 8px; /* Smaller padding */
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Adjust arrow position */
+    background-size: 8px 8px; /* Smaller arrow */
+    min-width: 80px; /* Adjust as needed */
+    font-size: 0.85em;
+    flex-grow: 1; /* Allow select to grow */
+}
+
+button {
+    padding: 8px 12px; /* Smaller button padding */
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8em; /* Smaller button text */
+     /* Make button take available grid space or set fixed width */
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-1px);
+}
+
+button:active {
+     transform: translateY(0px);
+}
+
+
+.hint {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 10px; /* Reduced margin */
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+     .controls-container {
+        /* Adjust grid for smaller screens if needed */
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 8px 10px;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+     button {
+         padding: 7px 10px;
+     }
+}
+
+@media (max-width: 480px) {
+     h1 {
+        font-size: 1.5em;
+    }
+    .controls-container {
+        /* Maybe stack controls in 1 or 2 columns on very small screens */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 6px 8px;
+    }
+    .control-group label, .control-group span, select, button {
+        font-size: 0.75em; /* Even smaller text */
+    }
+    input[type="range"] {
+        height: 16px;
+    }
+     button {
+         padding: 6px 8px;
+     }
+}
