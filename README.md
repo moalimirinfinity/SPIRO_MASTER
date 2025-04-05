@@ -4,13 +4,13 @@ A hypnotic Spirograph pattern generator built with pure JavaScript and HTML5 Can
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.io/SPIRO_MASTER/)
 
 ---
 
-## ✨ Features
+##  Features
 
 * **Real-Time Animation:** Smoothly animates the drawing of Spirograph patterns using `requestAnimationFrame`.
 * **Interactive Controls:** Fine-tune the pattern generation with sliders:
@@ -32,7 +32,7 @@ Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * HTML5
 * CSS3 (including CSS Variables for theming)
@@ -40,7 +40,7 @@ Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.
 
 ---
 
-## 🚀 Setup & Usage
+##  Setup & Usage
 
 **To run the project locally:**
 
@@ -55,26 +55,5 @@ Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.
     ```
 3.  **Open:** Simply open the `index.html` file in your web browser.
 
-**How to use:**
 
-1.  The Spirograph animation will start automatically.
-2.  Use the sliders and controls on the page to modify the pattern's parameters (R, r, p, speed, line width).
-3.  Change the line and background colors using the color pickers.
-4.  Toggle the "Trail" and "Guides" checkboxes to change visual effects.
-5.  Select a "Preset" from the dropdown to load predefined settings.
-6.  Click "Reset" to clear the current drawing (it keeps the current parameters).
-7.  Click "Export" to download the current canvas drawing as a PNG file.
 
----
-
-## 📁 Code Structure
-
-The project uses ES6 Modules and is organized as follows:
-
-* `index.html`: The main HTML file defining the page structure, canvas, and controls.
-* `style.css`: Contains all the styles for layout, theming, and responsiveness.
-* `config.js`: Exports default parameters and preset configurations.
-* `spirograph.js`: Defines the `Spirograph` class, responsible for calculations, drawing logic, and managing the animation state.
-* `main.js`: Initializes the application, handles user interactions (event listeners), updates the UI, manages the animation loop, and connects the UI controls to the `Spirograph` instance.
-
----
