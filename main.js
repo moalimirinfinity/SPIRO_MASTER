@@ -1,4 +1,3 @@
-// main.js
 import { Spirograph } from './spirograph.js';
 import { defaultParams, presets } from './config.js'; // Import configuration
 

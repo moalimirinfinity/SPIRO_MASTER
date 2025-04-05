@@ -5,7 +5,7 @@ export const defaultParams = {
     speed: 0.05,
     color: '#00FFFF',
     lineWidth: 2,
-    maxPoints: 1000, // Max points for the trail
+    maxPoints: 1000, 
     fadingTrail: true,
     showCircles: false,
     bgColor: '#1a1a1a'
