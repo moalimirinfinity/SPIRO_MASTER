@@ -32,28 +32,7 @@ Experience it live: [Spirograph Animation Demo](https://moalimirinfinity.github.
 
 ---
 
-##  Technologies Used
 
-* HTML5
-* CSS3 (including CSS Variables for theming)
-* JavaScript (ES6 Modules, Canvas API, `requestAnimationFrame`)
-
----
-
-##  Setup & Usage
-
-**To run the project locally:**
-
-1.  **Clone or Download:** Get the project files:
-    ```bash
-    git clone [https://github.com/your-username/Spirograph-Animation.git](https://www.google.com/search?q=https://github.com/your-username/Spirograph-Animation.git)
-    # Or download the ZIP and extract it
-    ```
-2.  **Navigate:** Open the project directory:
-    ```bash
-    cd Spirograph-Animation
-    ```
-3.  **Open:** Simply open the `index.html` file in your web browser.
 
 
 
